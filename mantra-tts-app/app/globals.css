@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --scrollbar-thumb: #2a2118;
+  --scrollbar-track: #0a0807;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0807;
+  color: #e8d5b0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3128;
+}
+
+/* Range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  background: #2a2118;
+  height: 6px;
+  border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ff8c00;
+  margin-top: -4px;
+  box-shadow: 0 0 6px rgba(255, 140, 0, 0.4);
+}
+
+input[type="range"].accent-saffron-500::-webkit-slider-thumb {
+  background: #ff8c00;
+}
+
+/* Textarea and input base styles */
+textarea, input[type="text"] {
+  font-family: inherit;
+}
+
+/* Smooth transitions for interactive elements */
+button, a {
+  transition: all 0.15s ease;
+}
+
+/* Spiritual glow effects */
+.glow-saffron {
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.3), 0 0 40px rgba(255, 140, 0, 0.1);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2), 0 0 40px rgba(255, 215, 0, 0.08);
+}
+
+/* Om symbol animation */
+@keyframes om-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.05); }
+}
+
+.om-symbol {
+  animation: om-pulse 4s ease-in-out infinite;
+}
+
+/* Background mantra particles */
+.mantra-bg {
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(255, 140, 0, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 215, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(255, 140, 0, 0.02) 0%, transparent 50%);
+}
